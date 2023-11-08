@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sky - Train Station</title>
+    <meta name="description" content="Sky">
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+</head>
+<body>
+<a-scene>
+    <a-assets>
+        <!-- Imagen para link-->
+        <img id="islandLink" src="recursos/isla_360.jpg">
+
+        <!-- Assets para geometría (obj) y para material (mtl) del modelo del zorro-->
+        <a-asset-item id="fox" src="recursos/fox.obj"></a-asset-item>
+        <a-asset-item id="fox-mtl" src="recursos/fox.mtl"></a-asset-item>
+
+        <!-- Precargamos la imagen 360º de la estación de tren que hemos renderizado desde Maya-->
+        <img id="trainStation" src="recursos/train_360.jpg">
+    </a-assets>
+
+    <a-sky id="image-360" radius="80" src="#trainStation"></a-sky>
+
+    <!--Situamos el modelo 3d del zorro con capa en nuestro escenario-->
+    <a-entity obj-model="obj: #fox; mtl: #fox-mtl"
+              material="color: red; opacity: 1.0"
+              position="-30 -10 30"
+              rotation="0 -100 0"
+              scale="3 3 3">
+        <a-animation attribute="rotation" direction="right" dur="3000" to="0 10 0"></a-animation>
+    </a-entity>
+
+    <a-link href="videosphere.html"
+            title="¡Sube al tren!"
+            image="#islandLink"
+            peekMode="false"
+            position="-5 1 3"></a-link>
+
+    <a-camera rotation="0 90 0">
+        <a-cursor color="#FF66FF"></a-cursor>
+    </a-camera>
+</a-scene>
+</body>
+</html>

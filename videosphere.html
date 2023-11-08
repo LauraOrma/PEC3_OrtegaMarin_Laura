@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Videosphere - Island</title>
+    <meta name="description" content="Videosphere - Island">
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+</head>
+<body>
+<a-scene>
+    <a-assets>
+        <video id="islandVideo" autoplay loop="false" src="recursos/island.mp4"></video>
+    </a-assets>
+
+    <a-videosphere src="#islandVideo"></a-videosphere>
+    <a-camera>
+        <a-cursor color="#ff66ff"></a-cursor>
+        <a-entity position="0 -0.6 -1">
+            <a-text value="Where...? ¿Where am I?" align="center" width="2"></a-text>
+        </a-entity>
+    </a-camera>
+</a-scene>
+</body>
+</html>
